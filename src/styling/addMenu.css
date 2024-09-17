@@ -1,0 +1,136 @@
+/* make nested components like the modules have auto-adjust for width and height */
+
+.add-menu-component
+{
+    height: 300px;
+    width: 200px;
+    border-radius: 10px;
+    /* background-color: #3b5468; */
+    position: absolute;
+    margin-left: 430px;
+
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px black;
+    gap: 10px;
+}
+
+.add-menu-tabs
+{
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    color: white;
+    font-family: sans-serif, monospace;
+
+}
+
+.add-menu-add-body
+{
+    background-color: #3b5468;
+    height: 270px;
+    width: 200px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    gap: 5px;
+}
+
+.add-menu-module
+{
+    width: 200px;
+    height: 100px;
+    background-color: #5a778f;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;    
+}
+
+.add-menu-module-title
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    background-color: lightblue;
+    font-family: sans-serif, monospace;
+
+}
+
+.add-menu-module-body
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    height: 70px;
+    width: 200px;
+
+    gap: 5px;
+}
+
+.add-menu-add-submit-btn
+{
+    height: 35px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: rgb(73, 194, 235);
+}
+
+.add-menu-add-activity-input
+{
+    height: 20px;
+    width: 100px;
+    border-radius: 5px;
+    padding: 0;
+
+}
+
+.add-menu-category-select
+{
+    height: 20px;
+    width: 100px;
+    border-radius: 5px;
+    padding: 0;
+}
+
+.add-menu-category-add-btn
+{
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    border: none;
+    padding: none;
+    background-color: lightblue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-menu-tab.active
+{
+    height: 30px;
+    width: 100px;
+    background-color: #3b5468;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-menu-tab.inactive
+{
+    margin-top: 10px;
+    height: 25px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #374b5c;
+
+}

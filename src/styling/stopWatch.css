@@ -1,0 +1,210 @@
+.stopWatch-component
+{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 130px;
+    width: 450px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stopWatch-outer-container-begin
+{
+    height: 130px;
+    width: 350px;
+    background-color: white;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #344756;
+}
+
+.stopWatch-outer-container
+{
+    height: 130px;
+    width: 350px;
+    border-radius: 5px;
+    background-color: #344756;
+    box-shadow: 0 4px 8px black;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-btns-container
+{
+    height: 150px;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    
+}
+
+.activities-dropdown
+{
+    width: 170px;
+}
+
+.add-btn-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 60px;
+    width: 60px;
+    background-color: #344756;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px black; 
+
+}
+
+.add-btn
+{
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+}
+
+.settings-btn-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    background-color: #344756;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px black; 
+
+}
+
+
+.icon
+{
+    max-width: 80%;
+    max-height: 80%;
+}
+
+
+
+
+.btn
+{
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: #344756;
+    border: 1px, solid, white;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for shape change */
+}
+
+.left-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 130px;
+    width: 250px;
+}
+
+.left-container-activity-select
+{
+    width: 170px;
+}
+
+.left-container-btns-container
+{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    gap: 5px;
+}
+
+.left-container-btn
+{
+    height: 20px;
+    width: 80px;
+    background-color: #344756;
+    border: 1px, solid, white;
+    color: white;
+    border-radius: 5px;
+}
+
+.left-container-stop-resume-btn
+{
+    height: 20px;
+    width: 120px;
+    background-color: #344756;
+    border: 1px, solid, white;
+    color: white;
+    border-radius: 5px;
+}
+
+.timeDisplay-play
+{   
+    margin-top: 10px;
+    font-size: 30px;
+    color: white;
+    font-family: sans-serif, monospace;
+    
+}
+
+.timeDisplay-pause
+{
+    font-size: 15px;
+    color: white;
+    font-family: sans-serif, monospace;
+}
+
+.btn-reset
+{
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: #344756;
+    border: white, 1px, solid;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for shape change */
+
+    /* !!!!!!!!!!!!!!!CONSIDER THESE OPTIONS */
+    box-shadow: #344756;
+    text-shadow: #344756;
+}
+
+.right-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.left-container-submit-edit-btns
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    gap: 15px;
+}
+

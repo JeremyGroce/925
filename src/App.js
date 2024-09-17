@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import {React, useEffect, useState} from 'react';
+import GetInput    from './components/userInput.js';
+import DisplayData from './components/dataDisplay.js';
+import StopWatch   from './components/stopWatch.js';
+import Calendar    from './components/calendar.js';
+import Add_Menu    from './components/add-menu.js';
 
-function App() {
+import './styling/app.css';
+
+function App({userToggleMenu}) {
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  const handle_menuToggle = () => {
+    setToggleMenu(!toggleMenu);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='dashboard'>
+      <div className='top'>
+        <StopWatch toggle_addbtn = {handle_menuToggle}/>
+        {toggleMenu && <Add_Menu/>}
+      </div>
+      {/* <DisplayData/> */}
+
     </div>
   );
 }
