@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    margin: 0;
+
+    background-image: url('../imgs/loginBackground-1.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-component .login-inner-container {
+    height: 340px;
+    width: 300px;
+    border: 1px, solid, darkgray; /* Fixed border definition */
+    border-radius: 10px;
+    
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    box-shadow: 0 4px 8px black;
+}
+
+
+.login-component
+{
+    background-color: rgba(211, 211, 211, 0.3);
+    backdrop-filter: blur(2px); /* Apply a blur effect */
+
+    border-radius: 10px;
+
+}
+
+.login-input
+{
+    height: 30px;
+    width: 215px;
+    border-radius: 15px;
+    border: 1px, solid, white;
+    outline: none;
+    background-color: transparent;
+    padding: 0px 0px 0px 35px;  
+    color: white;
+}
+
+.login-input::placeholder
+{
+    color: white;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.login-submit-btn
+{
+    width: 240px;
+    height: 30px;
+    border-radius: 15px;
+    border: 2px, white, solid;
+    padding: none;
+}
+
+.login-component h2 p 
+{
+    font-family: sans-serif, monospace;
+}
+
+.password-icon
+{
+    position: absolute;
+    left: 32px;
+    margin-top: 5px;
+
+}
+
+.user-icon
+{
+    position: absolute;
+    left: 32px;
+    margin-top: 5px;
+
+}

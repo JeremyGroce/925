@@ -5,9 +5,10 @@
     height: 300px;
     width: 200px;
     border-radius: 10px;
-    /* background-color: #3b5468; */
-    position: absolute;
+    background-color: rgba(211, 211, 211, 0.3);
+    backdrop-filter: blur(2px); /* Apply a blur effect */    position: absolute;
     margin-left: 430px;
+    bottom: 55px;
 
     display: flex;
     flex-direction: column;
@@ -43,8 +44,8 @@
 {
     width: 200px;
     height: 100px;
-    background-color: #5a778f;
-    display: flex;
+    background-color: rgba(211, 211, 211, 0.3);
+    backdrop-filter: blur(2px); /* Apply a blur effect */    display: flex;
     align-items: flex-start;
     flex-direction: column;    
 }
@@ -117,8 +118,8 @@
 {
     height: 30px;
     width: 100px;
-    background-color: #3b5468;
-    display: flex;
+    background-color: rgba(211, 211, 211, 0.3);
+    backdrop-filter: blur(2px); /* Apply a blur effect */    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -131,6 +132,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #374b5c;
-
+    background-color: rgba(211, 211, 211, 0.3);
+    backdrop-filter: blur(2px); /* Apply a blur effect */
 }

@@ -28,7 +28,8 @@
     height: 130px;
     width: 350px;
     border-radius: 5px;
-    background-color: #344756;
+    background-color: rgba(211, 211, 211, 0.3);
+    backdrop-filter: blur(2px); /* Apply a blur effect */
     box-shadow: 0 4px 8px black;
 
 
@@ -61,8 +62,8 @@
     overflow: hidden;
     height: 60px;
     width: 60px;
-    background-color: #344756;
-    border-radius: 10px;
+    background-color: rgba(211, 211, 211, 0.3);
+    backdrop-filter: blur(2px); /* Apply a blur effect */    border-radius: 10px;
     box-shadow: 0 4px 8px black; 
 
 }
@@ -83,7 +84,8 @@
     justify-content: center;
     height: 60px;
     width: 60px;
-    background-color: #344756;
+    background-color: rgba(211, 211, 211, 0.3);
+    backdrop-filter: blur(2px); /* Apply a blur effect */
     border-radius: 10px;
     box-shadow: 0 4px 8px black; 
 
@@ -105,7 +107,11 @@
     width: 50px;
     height: 50px;
     border: none;
-    background-color: #344756;
+
+    background-color: transparent;
+    box-shadow: 0 4px 8px black;
+
+
     border: 1px, solid, white;
     color: white;
     font-size: 16px;
@@ -142,7 +148,8 @@
 {
     height: 20px;
     width: 80px;
-    background-color: #344756;
+    background-color: transparent;
+    box-shadow: 0 4px 8px black;
     border: 1px, solid, white;
     color: white;
     border-radius: 5px;
@@ -152,10 +159,11 @@
 {
     height: 20px;
     width: 120px;
-    background-color: #344756;
+    background-color: transparent;
     border: 1px, solid, white;
     color: white;
     border-radius: 5px;
+    box-shadow: 0 4px 8px black;
 }
 
 .timeDisplay-play
@@ -179,7 +187,7 @@
     width: 50px;
     height: 50px;
     border: none;
-    background-color: #344756;
+    background-color: transparent;
     border: white, 1px, solid;
     border-radius: 10px;
     font-size: 16px;
@@ -187,8 +195,8 @@
     transition: all 0.3s ease; /* Smooth transition for shape change */
 
     /* !!!!!!!!!!!!!!!CONSIDER THESE OPTIONS */
-    box-shadow: #344756;
-    text-shadow: #344756;
+    box-shadow: 0 4px 8px black;
+
 }
 
 .right-container

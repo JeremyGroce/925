@@ -5,7 +5,9 @@ import StopWatch   from './components/stopWatch.js';
 import Calendar    from './components/calendar.js';
 import Add_Menu    from './components/add-menu.js';
 
-import './styling/app.css';
+import Login       from './pages/logIn.js';
+
+// import './styling/app.css';
 
 function App({userToggleMenu}) {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -14,12 +16,15 @@ function App({userToggleMenu}) {
     setToggleMenu(!toggleMenu);
   }
   return (
+    
+    // <div>
+    //   <Login/>
+    // </div>
     <div className='dashboard'>
       <div className='top'>
         <StopWatch toggle_addbtn = {handle_menuToggle}/>
         {toggleMenu && <Add_Menu/>}
       </div>
-      {/* <DisplayData/> */}
 
     </div>
   );
