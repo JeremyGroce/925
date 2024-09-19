@@ -114,7 +114,7 @@ function StopWatch({toggle_addbtn})
         <div className="stopWatch-component">
 
             {/* Select Activity and Click Begin */}
-            {!visible && (
+            {!visible ? (
                 <div className="stopWatch-outer-container-begin">
                 <button
                 onClick={visibility}>
@@ -130,6 +130,10 @@ function StopWatch({toggle_addbtn})
                 
 
             </div>
+            ):(
+                <div>
+                    
+                </div>
             )}
             
 
@@ -139,7 +143,6 @@ function StopWatch({toggle_addbtn})
 
                 <div className="left-container">
                                             
-
                     <div className="timeDisplay-play">{formatTime(elapTime)}
                     </div>
                     <div className="timeDisplay-pause">--{formatTime(pause_elapTime)}--</div>
@@ -177,7 +180,7 @@ function StopWatch({toggle_addbtn})
                 <div className="right-container">
                     {/* Play-Pause Toggle */}
                     <button 
-                            className={`btn ${isRunning ? 'on' : 'off'}`} // Apply class based on state
+                            className={`btn ${isRunning ? 'on' : 'off'}`} 
                             onClick={handleClick}
                         >
                             {isRunning ? <Icon_pause width="24px" height="24px"/> : <Icon_play width="24px" height = "24px"/>} {/* Display the current shape */}   

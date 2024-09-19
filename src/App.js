@@ -17,16 +17,16 @@ function App({userToggleMenu}) {
   }
   return (
     
-    // <div>
-    //   <Login/>
-    // </div>
-    <div className='dashboard'>
-      <div className='top'>
-        <StopWatch toggle_addbtn = {handle_menuToggle}/>
-        {toggleMenu && <Add_Menu/>}
-      </div>
-
+    <div>
+      <Login/>
     </div>
+    // <div className='dashboard'>
+    //   <div className='top'>
+    //     <StopWatch toggle_addbtn = {handle_menuToggle}/>
+    //     {toggleMenu && <Add_Menu/>}
+    //   </div>
+
+    // </div>
   );
 }
 

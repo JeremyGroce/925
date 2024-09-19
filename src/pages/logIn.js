@@ -55,9 +55,9 @@ function Login()
                 </div>
 
                 <div>
-                    <p>
+                    <h5>
                         Don't have an account? <a href="">Register Now</a>
-                    </p>
+                    </h5>
                 </div>
             </div>
         </div>

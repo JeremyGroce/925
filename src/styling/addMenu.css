@@ -1,19 +1,23 @@
 /* make nested components like the modules have auto-adjust for width and height */
+/* combine the tab aspects to reduce redundant code */
 
 .add-menu-component
 {
-    height: 300px;
+    height: 290px;
     width: 200px;
     border-radius: 10px;
-    background-color: rgba(211, 211, 211, 0.3);
-    backdrop-filter: blur(2px); /* Apply a blur effect */    position: absolute;
-    margin-left: 430px;
-    bottom: 55px;
+
+    position: absolute;
+    margin-left: 440px;
+    bottom: 65px;
 
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 8px black;
     gap: 10px;
+
+    border: 1px, solid, rgba(211, 211, 211, 0.7);
+
+    /* background-color: rgba(211, 211, 211, 0.2); */
 }
 
 .add-menu-tabs
@@ -29,7 +33,6 @@
 
 .add-menu-add-body
 {
-    background-color: #3b5468;
     height: 270px;
     width: 200px;
 
@@ -45,9 +48,13 @@
     width: 200px;
     height: 100px;
     background-color: rgba(211, 211, 211, 0.3);
-    backdrop-filter: blur(2px); /* Apply a blur effect */    display: flex;
+    backdrop-filter: blur(2px); /* Apply a blur effect */    
+    display: flex;
     align-items: flex-start;
     flex-direction: column;    
+    border: 1px, solid, white;
+    border-radius: 10px;
+    color: white;
 }
 
 .add-menu-module-title
@@ -57,7 +64,6 @@
     align-items: center;
     width: 200px;
     height: 30px;
-    background-color: lightblue;
     font-family: sans-serif, monospace;
 
 }
@@ -78,9 +84,13 @@
 .add-menu-add-submit-btn
 {
     height: 35px;
-    width: 150px;
+    width: 200px;
     border-radius: 10px;
-    background-color: rgb(73, 194, 235);
+    border: 1px, solid, white;
+    background-color: rgba(211, 211, 211, 0.3);
+    backdrop-filter: blur(2px); 
+    box-shadow: 0 4px 8px black;
+    color: white;
 }
 
 .add-menu-add-activity-input
@@ -119,19 +129,23 @@
     height: 30px;
     width: 100px;
     background-color: rgba(211, 211, 211, 0.3);
-    backdrop-filter: blur(2px); /* Apply a blur effect */    display: flex;
+    backdrop-filter: blur(2px);     
+    display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
+    border: 1px, solid, white;
 }
 
 .add-menu-tab.inactive
 {
-    margin-top: 10px;
-    height: 25px;
+    height: 30px;
     width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(211, 211, 211, 0.3);
-    backdrop-filter: blur(2px); /* Apply a blur effect */
+    backdrop-filter: blur(2px); 
+    border-radius: 5px;
+    border: 1px, solid, white;
 }
