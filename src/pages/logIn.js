@@ -1,17 +1,27 @@
-import React from "react";
+import {React, useState} from "react";
+import {Link} from 'react-router-dom';
 
 import {ReactComponent as Icon_Lock} from '../imgs/icon-lock.svg';
 import {ReactComponent as Icon_User} from '../imgs/icon-user.svg';
+
 
 import '../styling/login.css';
 
 function Login()
 {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+
+    const handleLogin = (e) => {
+        console.log("Logging in");
+    }
+
     return(
         // main container
         <div className="login-component">
             <div className="login-inner-container">
-                <div>
+                <div className="login-title">
                     <h2>Login</h2>
                 </div>
 
@@ -22,8 +32,11 @@ function Login()
                     width   = "20px"
                     />
                     <input
-                    className="login-input"
-                    placeholder="username"
+                        type="text"
+                        className="login-input"
+                        placeholder="username"
+                        value = {username}
+                        onChange={(e) => setUsername(e.target.value)}
                     ></input>
                     
                     
@@ -56,7 +69,7 @@ function Login()
 
                 <div>
                     <h5>
-                        Don't have an account? <a href="">Register Now</a>
+                        Don't have an account? <Link to="/register">Register Now</Link>
                     </h5>
                 </div>
             </div>

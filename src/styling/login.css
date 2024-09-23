@@ -13,7 +13,7 @@ body {
 .login-component .login-inner-container {
     height: 340px;
     width: 300px;
-    border: 1px, solid, darkgray; /* Fixed border definition */
+    border: 1px, solid, darkgray; 
     border-radius: 10px;
     
 
@@ -41,32 +41,33 @@ body {
     height: 30px;
     width: 215px;
     border-radius: 15px;
-    border: 1px, solid, white;
+    border: 1px, solid, #1C274C;
     outline: none;
     background-color: transparent;
     padding: 0px 0px 0px 35px;  
-    color: white;
+
 }
 
 .login-input::placeholder
 {
-    color: white;
+    color: #1C274C;
     margin-left: 10px;
     font-weight: 500;
 }
 
 .login-submit-btn
 {
-    width: 240px;
+    width:250px;
     height: 30px;
     border-radius: 15px;
     border: 2px, white, solid;
     padding: none;
 }
 
-.login-component h2 p 
+.login-title 
 {
     font-family: 'Montserrat', sans-serif;
+    color: #1C274C;
 }
 
 .password-icon
@@ -74,7 +75,6 @@ body {
     position: absolute;
     left: 32px;
     margin-top: 5px;
-
 }
 
 .user-icon
@@ -82,7 +82,6 @@ body {
     position: absolute;
     left: 32px;
     margin-top: 5px;
-
 }
 
 .login-component a

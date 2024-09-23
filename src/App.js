@@ -5,7 +5,9 @@ import StopWatch   from './components/stopWatch.js';
 import Calendar    from './components/calendar.js';
 import Add_Menu    from './components/add-menu.js';
 
+import { BrowserRouter as Router, Route, Switch, Routes } from 'react-router-dom';
 import Login       from './pages/logIn.js';
+import Register    from './components/register.js';
 
 // import './styling/app.css';
 
@@ -16,10 +18,16 @@ function App({userToggleMenu}) {
     setToggleMenu(!toggleMenu);
   }
   return (
-    
-    <div>
-      <Login/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Login/>} />
+        <Route path='/register' element={<Register/>}/>
+      </Routes>
+    </Router>
+
+
+
+
     // <div className='dashboard'>
     //   <div className='top'>
     //     <StopWatch toggle_addbtn = {handle_menuToggle}/>
