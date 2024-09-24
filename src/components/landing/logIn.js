@@ -1,11 +1,10 @@
 import {React, useState} from "react";
-import {Link} from 'react-router-dom';
 
-import {ReactComponent as Icon_Lock} from '../imgs/icon-lock.svg';
-import {ReactComponent as Icon_User} from '../imgs/icon-user.svg';
+import {ReactComponent as Icon_Lock} from '../../imgs/icon-lock.svg';
+import {ReactComponent as Icon_User} from '../../imgs/icon-user.svg';
 
-
-import '../styling/login.css';
+import '../../styling/login.css';
+import { Link } from "react-router-dom";
 
 function Login()
 {
@@ -68,9 +67,9 @@ function Login()
                 </div>
 
                 <div>
-                    <h5>
+                    <p>
                         Don't have an account? <Link to="/register">Register Now</Link>
-                    </h5>
+                    </p>
                 </div>
             </div>
         </div>

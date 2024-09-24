@@ -5,7 +5,7 @@ body {
     height: 100vh; 
     margin: 0;
 
-    background-image: url('../imgs/loginBackground-1.webp');
+    background-image: url('../imgs/loginBackground-4.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -13,7 +13,7 @@ body {
 .login-component .login-inner-container {
     height: 340px;
     width: 300px;
-    border: 1px, solid, darkgray; 
+    /* border: 1px, solid, darkgray;  */
     border-radius: 10px;
     
 
@@ -29,6 +29,8 @@ body {
 
 .login-component
 {
+    height: 340px;
+    width: 300px;
     background-color: rgba(211, 211, 211, 0.3);
     backdrop-filter: blur(2px); /* Apply a blur effect */
 
@@ -41,9 +43,9 @@ body {
     height: 30px;
     width: 215px;
     border-radius: 15px;
-    border: 1px, solid, #1C274C;
+    border: 1px, solid, gray;
     outline: none;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 0px 0px 0px 35px;  
 
 }
@@ -59,9 +61,11 @@ body {
 {
     width:250px;
     height: 30px;
-    border-radius: 15px;
-    border: 2px, white, solid;
+    border-radius: 5px;
+    background-color: #1C274C;
+    border: #1C274C, solid, 1px;
     padding: none;
+    color: white;
 }
 
 .login-title 
