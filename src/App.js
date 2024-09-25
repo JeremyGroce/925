@@ -12,7 +12,6 @@ function App() {
   // }
   return (
       <Landing/>
-
     // <div className='dashboard'>
     //   <div className='top'>
     //     <StopWatch toggle_addbtn = {handle_menuToggle}/>

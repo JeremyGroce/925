@@ -9,13 +9,6 @@ import '../../styling/register.css';
 
 function Register() {
 
-    // const [accountData, setAccountData] = useState(
-    //     {
-    //         username: '',
-    //         email: '',
-    //         password: '',
-    //     });
-
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -25,16 +18,16 @@ function Register() {
         e.preventDefault(); // Stop page from reloading
 
         console.log("submit", {username, email, password});
-        // const response = await fetch('http://localhost:5000/register', {
-        //     method: 'POST',
-        //     headers: {
-        //       'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify({username, email, password }),
-        //   });
+        const response = await fetch('http://localhost:5000/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({username, email, password }),
+          });
           
-        //   const data = await response.json();
-        //   alert(data.message);
+          const data = await response.json();
+          alert(data.message);
 
     }
     
@@ -79,7 +72,7 @@ function Register() {
 
                         <input
                             placeholder="Email"
-                            type="text"
+                            type="email"
                             value={email}
                             onChange={(e)=>setEmail(e.target.value)}>
                         </input>
