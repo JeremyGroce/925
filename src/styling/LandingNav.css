@@ -1,11 +1,31 @@
 .landingNav-component
 {
-    /* height: 100px;
-    width: 300px;
-    border: 1px, solid, black; */
+    position: absolute;
+    height: 50px;
+    width: 400px;
+    top: 10px;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 20px;
-    font-size: larger;
+    font-size: 2em;
+    font-weight: bolder;
+
+    border-radius: 5px;
+    background-color: rgba(211, 211, 211, 0.3);
+    box-shadow: 0 4px 8px black;
+    backdrop-filter: blur(2px); 
+}
+
+.landingNav-link
+{
+    color: #1C274C;
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.landingNav-link:hover
+{
+    color: white;
 }

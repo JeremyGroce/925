@@ -1,21 +1,9 @@
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; 
-    margin: 0;
 
-    background-image: url('../imgs/loginBackground-4.jpg');
-    background-size: cover;
-    background-position: center;
-}
 
 .login-component .login-inner-container {
     height: 340px;
     width: 300px;
-    /* border: 1px, solid, darkgray;  */
     border-radius: 10px;
-    
 
     display: flex;
     flex-direction: column;

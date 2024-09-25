@@ -14,7 +14,7 @@
 
 }
 
-.register-input
+.register-input-container
 {
     display: flex;
     flex-direction: column;
@@ -43,9 +43,24 @@
     
 }
 
+/* Individual icon - inputboxes */
+.register-input-inner-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
 .register-component input::placeholder
 {
     color: #1C274C;
+}
+
+.register-icon
+{
+    height: 20px;
+    width: 20px;
 }
 
 .register-component h2

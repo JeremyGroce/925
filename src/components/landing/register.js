@@ -16,24 +16,25 @@ function Register() {
     //         password: '',
     //     });
 
-    const [username, setUsername] = useState('PooPooMan');
-    const [password, setPassword] = useState('aaaa');
-    const [email, setEmail] = useState('aaa@aaa.com');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
 
     const handleSubmit = async(e) =>
     {
         e.preventDefault(); // Stop page from reloading
-        console.log("submit");
-        const response = await fetch('http://localhost:5000/register', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({username, email, password }),
-          });
+
+        console.log("submit", {username, email, password});
+        // const response = await fetch('http://localhost:5000/register', {
+        //     method: 'POST',
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({username, email, password }),
+        //   });
           
-          const data = await response.json();
-          alert(data.message);
+        //   const data = await response.json();
+        //   alert(data.message);
 
     }
     
@@ -45,36 +46,42 @@ function Register() {
             </div>
 
             <form onSubmit={handleSubmit}>
-                <div className="register-input">
-                    <div>
+                <div className="register-input-container">
+                    <div className="register-input-inner-container">
                         <Icon_User
-                            height = "20px"
-                            width  = "20px"
+                            className = 'register-icon'
                         />
                         <input
-                            placeholder="Username">
+                            type="text"
+                            placeholder="Username"
+                            value={username}
+                            onChange={(e)=>setUsername(e.target.value)}>
                         </input>
                     </div>
                     
-                    <div>
+                    <div className="register-input-inner-container">
                         <Icon_Lock
-                            height = "20px"
-                            width  = "20px"
+                            className = 'register-icon'
                         />
 
                         <input
-                            placeholder="Password">
+                            placeholder="Password"
+                            type="password"
+                            value={password}
+                            onChange={(e)=>setPassword(e.target.value)}>
                         </input>
                     </div> 
                     
-                    <div>
+                    <div className="register-input-inner-container">
                         <Icon_Email
-                            height = "20px"
-                            width  = "20px"
+                            className = 'register-icon'
                         />
 
                         <input
-                            placeholder="Email">
+                            placeholder="Email"
+                            type="text"
+                            value={email}
+                            onChange={(e)=>setEmail(e.target.value)}>
                         </input>
                     </div>
 

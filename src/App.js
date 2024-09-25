@@ -1,5 +1,5 @@
 import {React, useEffect, useState} from 'react';
-
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Landing from './pages/landing.js';
 
 // import './styling/app.css';
@@ -11,7 +11,7 @@ function App() {
   //   setToggleMenu(!toggleMenu);
   // }
   return (
-    <Landing/>
+      <Landing/>
 
     // <div className='dashboard'>
     //   <div className='top'>
