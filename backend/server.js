@@ -31,6 +31,25 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
+app.get('/check-username',async(req, res) =>
+{
+  const {username} = req.query;
+
+  try{
+    const user = await User.findOne({username});
+    if(user)
+    {
+        return res.json({taken:true});  
+    }
+    return res.json({taken:false});
+  }
+  catch(error)
+  {
+    console.error(error);
+    return res.status(500).json({message: 'Server Error in /check-username'});
+  }
+});
+
 // post route
 app.post('/register',async(req,res)=> {
   const {username, email, password} = req.body;

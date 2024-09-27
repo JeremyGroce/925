@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 
 }
 
@@ -33,7 +33,7 @@
 
 .register-component input
 {
-    height: 30px;
+    height: 20px;
     width: 215px;
 
     background-color: transparent;
@@ -41,6 +41,12 @@
     border: none;
     border-bottom: 1px solid #000;
     
+}
+
+.register-component input:focus
+{
+    border: 1px, solid, #1C274C;
+    border-radius: 5px;
 }
 
 /* Individual icon - inputboxes */
@@ -76,4 +82,27 @@
     background-color: #1C274C;
     border: none;
     color: white;
+}
+
+.register-username-authenticate
+{
+    height: 13px;
+    width: 100px;
+    font-size: 0.7em;
+    position: absolute;
+    top: 93px;
+    left: 56px;
+    font-weight: bold;
+    color: red;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: drop-down 0.5s forwards;
+}
+
+@keyframes drop-down {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

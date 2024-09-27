@@ -2,20 +2,16 @@
 {
     position: absolute;
     height: 50px;
-    width: 400px;
+    width: 100vw;
     top: 10px;
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     gap: 20px;
     font-size: 2em;
     font-weight: bolder;
 
-    border-radius: 20px;
-    background-color: rgba(211, 211, 211, 0.3);
-    box-shadow: 0 4px 8px black;
-    backdrop-filter: blur(2px); 
 }
 
 .landingNav-link
