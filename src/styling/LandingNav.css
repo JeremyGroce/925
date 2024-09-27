@@ -19,9 +19,12 @@
     color: #1C274C;
     text-decoration: none;
     transition: color .2s;
+    border-bottom: 3px solid #1C274C;
+    padding-bottom: 5px;
 }
 
 .landingNav-link:hover
 {
     color: white;
+    border-bottom: 4px solid white;
 }

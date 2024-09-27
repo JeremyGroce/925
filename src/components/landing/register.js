@@ -69,7 +69,7 @@ function Register() {
     const comparePasswords = async(second_password) =>
     {   
         setSecondPass(second_password);
-        if(firstPass === second_password)
+        if(firstPass === second_password && firstPass != '' && second_password != '')
         {
             console.log("match");
             setPassMatch(true);
@@ -162,9 +162,7 @@ function Register() {
                     
 
                     
-                    <div className="register-upload-pfp">
-                    Upload Profile Picture...
-                    </div>
+                    
                     
                         <button>Create</button>
 
