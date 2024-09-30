@@ -32,11 +32,11 @@ function Login()
                     />
                     <input
                         type="text"
-                        className="login-input"
-                        placeholder="username"
+                        className={`login-input ${username ? 'username':'blank_user'}`}
                         value = {username}
                         onChange={(e) => setUsername(e.target.value)}
                     ></input>
+                    <label className="login-username-label">username</label>
                     
                     
                 </div>
@@ -47,11 +47,15 @@ function Login()
                     height = '20px'
                     width  = '20px'/>
                     <input
-                    className="login-input"
-                    placeholder="password"
+                    className={`login-input ${password ? 'password' : 'blank_pass'}`}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     type="password"
+                    id = "login_password"
                     ></input>
                     
+                    <label
+                        className="login-password-label">password</label>
                 </div>
 
                 <div>

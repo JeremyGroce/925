@@ -80,3 +80,65 @@
 {
     color: white;
 }
+
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px rgb(87, 186, 219, 0.1) inset !important;
+} */
+
+.login-username-label
+{
+    position: absolute;
+    
+    top: 96px;
+    left: 59px;
+    transition: 0.3s;
+    color: #1C274C;
+    pointer-events: none;
+    font-size: 13px;
+}
+
+.login-password-label
+{
+    position: absolute;
+
+    top: 148px;
+    left: 59px;
+    transition: 0.3s;
+    color: #1C274C;
+    pointer-events: none;
+    font-size: 13px;
+}
+
+.login-input.blank_user:focus + label,
+.login-input.username + label
+{
+    top: 76px;
+    font-size: 11px;
+    color: #1C274C;
+}
+
+.login-input.blank_pass:focus + label,
+.login-input.password + label
+{
+    top: 128px;
+    left: 59px;
+    font-size: 11px;
+    color: #1C274C;
+}
+
+.login-input.blank_user,
+.login-input.blank_pass
+{
+    height: 30px;
+    width: 215px;
+    border-radius: 15px;
+    border: 1px, solid, gray;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0px 0px 0px 35px;  
+}
+
+

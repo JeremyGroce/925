@@ -33,6 +33,7 @@
 
 .register-component input
 {
+    box-sizing: border-box;
     height: 20px;
     width: 215px;
 
@@ -52,6 +53,7 @@
 /* Individual icon - inputboxes */
 .register-input-inner-container
 {
+    width: 215px;
     display: flex;
     justify-content: center;
     align-items: center;
