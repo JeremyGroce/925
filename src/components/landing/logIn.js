@@ -15,10 +15,46 @@ function Login()
     const handleLogin = async() =>     
     {
         // e.preventDefault();
-        
+
+        try {
+            const response = await fetch('http://localhost:5000/login',
+                {
+                    method: 'POST',
+                    headers: 
+                    {
+                        'Content-Type': 'application/json',
+
+                    },
+                    body: JSON.stringify({ username, password }),
+                });
+
+                const data = await response.json();
+
+                if(response.ok)
+                {
+                    if(data.check)
+                    {
+                        console.log("successful");
+                    }
+                    else
+                    {
+                        console.log("unsuccessful");
+                    }
+                }
+                else 
+                {
+                    console.log("error");
+                }
+        } catch (error)
+        {
+            console.log("error");
+        }
+
+        // post request
+        // change .css elements to respond
+
         console.log(username);
         console.log(password);
-        // change .css elements to respond
         // dsjiofjdsfijsfsiojd
     }
 
