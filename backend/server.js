@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
 const app = express();
 const port = 5000;
 
@@ -31,6 +32,7 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
+// Check if username is already taken
 app.get('/check-username',async(req, res) =>
 {
   const {username} = req.query;
@@ -50,7 +52,7 @@ app.get('/check-username',async(req, res) =>
   }
 });
 
-// post route
+// Create new User w/ Password
 app.post('/register',async(req,res)=> {
   const {username, email, password} = req.body;
 
@@ -72,4 +74,34 @@ app.post('/register',async(req,res)=> {
   }
 
  
+});
+
+app.post('/login', async(req,res)=>
+{
+  const {username, password} = req.body;
+
+  try {
+    const user = await User.findOne({ username });
+
+    if(!user)
+    {
+      // username wrong
+      return res.status(401).json({check: false});
+    }
+
+    const pass = await bcrypt.compare(password, user.password);
+    
+    if(!pass)
+    {
+      // passwords don't match
+      return res.status(401).json({check: false});
+    }
+
+    // otherwise successful login
+    res.status(200).json({check: true});
+  } catch(error)
+  {
+    console.error(error);
+    res.status(500).json({message: 'server error' });
+  }
 });

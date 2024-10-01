@@ -1,16 +1,17 @@
 .landingNav-component
 {
     position: absolute;
-    height: 50px;
+    height: 35px;
     width: 100vw;
-    top: 10px;
+    top: 30px;
 
     display: flex;
     flex-direction: row;
     justify-content: left;
-    gap: 20px;
-    font-size: 2em;
-    font-weight: bolder;
+    align-items: center;
+    gap: 40px;
+    font-size: 1.5em;
+    font-weight: bold;
 
 }
 
@@ -19,12 +20,10 @@
     color: #1C274C;
     text-decoration: none;
     transition: color .2s;
-    border-bottom: 3px solid #1C274C;
     padding-bottom: 5px;
 }
 
 .landingNav-link:hover
 {
     color: white;
-    border-bottom: 4px solid white;
 }

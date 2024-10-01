@@ -12,8 +12,14 @@ function Login()
     const [password, setPassword] = useState('');
 
 
-    const handleLogin = (e) => {
-        console.log("Logging in");
+    const handleLogin = async() =>     
+    {
+        // e.preventDefault();
+        
+        console.log(username);
+        console.log(password);
+        // change .css elements to respond
+        // dsjiofjdsfijsfsiojd
     }
 
     return(
@@ -65,6 +71,7 @@ function Login()
                 <div>
                     <button
                     className="login-submit-btn"
+                    onClick={handleLogin}
                     >
                         Login
                     </button>
