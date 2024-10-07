@@ -1,0 +1,50 @@
+.dashnav-component
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+
+    height: 30px;
+    width: 100vw;
+    background-color: gray;
+
+}
+
+.dashnav-profile
+{
+    display: flex;
+    flex-direction: row;
+    border: solid 1px white;
+
+
+    background-color: lightblue;
+    height: 30px;
+    width: 200px;
+}
+
+.dashnav-profile-username
+{
+    position: absolute;
+    height: 30px;
+    right: 130px;
+    border: 1px solid white;
+    
+}
+
+.dashnav-profile-pfp
+{
+    position: absolute;
+    right: 90px;
+    border-radius: 100%;
+}
+
+.dashnav-hamburger-menu
+{
+    position: absolute;
+    left: 0px;
+    height: 30px;
+    width: 30px;
+    border: 1px solid white;
+}
+

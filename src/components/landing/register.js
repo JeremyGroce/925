@@ -73,6 +73,7 @@ function Register() {
         {
             console.log("match");
             setPassMatch(true);
+            setPassword(second_password);
         }
         else
         {

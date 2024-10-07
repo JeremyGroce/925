@@ -86,6 +86,7 @@
     color: white;
 }
 
+/* literally just says username taken lol */
 .register-username-authenticate
 {
     height: 13px;
@@ -93,7 +94,7 @@
     font-size: 0.7em;
     position: absolute;
     top: 93px;
-    left: 56px;
+    left: 65px;
     font-weight: bold;
     color: red;
 

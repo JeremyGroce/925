@@ -1,11 +1,3 @@
-body {    
-    height: 100vh; 
-    margin: 0;
-    
-    background-image: url('../imgs/loginBackground-4.jpg');
-    background-size: cover;
-    background-position: center;
-}
 
 .landing-page
 {
@@ -16,4 +8,9 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
+
+    /* wallpaper for landing */
+    background-image: url('../imgs/loginBackground-4.jpg');
+    background-size: cover;
+    background-position: center;
 }

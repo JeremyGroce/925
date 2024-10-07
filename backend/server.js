@@ -59,6 +59,10 @@ app.post('/register',async(req,res)=> {
   const newUser = new User({username, email, password});
 
   try {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPass = await bcrypt.hash(password, salt);
+
+    const newUser = new User({username, email, password: hashedPass});
     const savedUser = await newUser.save();
     res.status(201).json({
       message: 'User registered successfully',
@@ -79,10 +83,8 @@ app.post('/register',async(req,res)=> {
 app.post('/login', async(req,res)=>
 {
   const {username, password} = req.body;
-
   try {
     const user = await User.findOne({ username });
-
     if(!user)
     {
       // username wrong
@@ -90,7 +92,7 @@ app.post('/login', async(req,res)=>
     }
 
     const pass = await bcrypt.compare(password, user.password);
-    
+    console.log(pass);
     if(!pass)
     {
       // passwords don't match

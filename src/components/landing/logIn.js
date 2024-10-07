@@ -1,16 +1,18 @@
 import {React, useState} from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 
 import {ReactComponent as Icon_Lock} from '../../imgs/icon-lock.svg';
 import {ReactComponent as Icon_User} from '../../imgs/icon-user.svg';
 
 import '../../styling/login.css';
-import { Link } from "react-router-dom";
 
 function Login()
 {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    const navigate = useNavigate();
 
     const handleLogin = async() =>     
     {
@@ -34,20 +36,21 @@ function Login()
                 {
                     if(data.check)
                     {
-                        console.log("successful");
+                        console.log("successful login");
+                        navigate("/dashboard");
                     }
                     else
                     {
-                        console.log("unsuccessful");
+                        console.log("unsuccessful login");
                     }
                 }
                 else 
                 {
-                    console.log("error");
+                    console.log("bad response");
                 }
         } catch (error)
         {
-            console.log("error");
+            console.log("catch");
         }
 
         // post request
@@ -55,7 +58,6 @@ function Login()
 
         console.log(username);
         console.log(password);
-        // dsjiofjdsfijsfsiojd
     }
 
     return(
@@ -119,6 +121,8 @@ function Login()
                     </p>
                 </div>
             </div>
+
+
         </div>
 
     );

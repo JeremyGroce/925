@@ -5,8 +5,8 @@ import '../../styling/about.css'
 function About() 
 {
     return(
-        <div className="about-component">
-            
+        <div>
+            Placeholder
         </div>
     );
 }
