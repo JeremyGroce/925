@@ -1,0 +1,36 @@
+.dashboard-component
+{
+    height: 100vh;
+    width: 100vw;
+    background-color: #bdc3c596;
+
+    /* wallpaper */
+    background-image: url(../imgs/dashboard-wallpaper1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/* all screen space under the navbar */
+.dashboard-widget-outer-container
+{
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.dashboard-widget-inner-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    height: 500px;
+    width: 900px;
+    border: 2px solid blue;
+}

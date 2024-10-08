@@ -1,50 +1,85 @@
-.dashnav-component
+.dashnav-bar
 {
     display: flex;
     flex-direction: row;
     justify-content: right;
     align-items: center;
 
-    height: 30px;
+    height: 35px;
     width: 100vw;
-    background-color: gray;
+    background-color: white;
 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); 
+    background-color: rgba(211, 211, 211, 0.3);
+    backdrop-filter: blur(2px); /* Apply a blur effect */
 }
+
 
 .dashnav-profile
 {
     display: flex;
     flex-direction: row;
-    border: solid 1px white;
+
+    border: 1px blue solid;
 
 
-    background-color: lightblue;
+    background-color: white;
     height: 30px;
-    width: 200px;
+    width: 130px;
 }
 
 .dashnav-profile-username
 {
     position: absolute;
-    height: 30px;
-    right: 130px;
-    border: 1px solid white;
     
 }
 
 .dashnav-profile-pfp
 {
     position: absolute;
-    right: 90px;
+    right: 5px;
     border-radius: 100%;
 }
 
-.dashnav-hamburger-menu
+.dashnav-hamburger-menu-container
 {
     position: absolute;
-    left: 0px;
+
+    left: 10px;
     height: 30px;
-    width: 30px;
-    border: 1px solid white;
+    width: 35px;
+
+    cursor: pointer;
 }
 
+.bar1, .bar2, .bar3
+{
+  width: 30px;
+  height: 4px;
+  border-radius: 10px;
+  background-color: #333;
+  margin: 4px 0px ;
+  transition: 0.4s;
+}
+
+.dashnav-menu
+{
+    position: absolute;
+    width: 200px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); 
+    background-color: rgba(211, 211, 211, 0.3);
+    backdrop-filter: blur(2px); 
+    font-size: larger;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;    
+
+}
+
+.dashnav-menu>div:hover
+{
+    background-color: gray;
+    cursor: pointer;
+    transition: 0.1s;
+}
