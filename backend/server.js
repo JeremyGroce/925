@@ -4,13 +4,24 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
+const session = require('express-session');
 const app = express();
 const port = 5000;
 
 
-
+// MiddleWare
 app.use(bodyParser.json()); // Parse JSON bodies
-app.use(cors()); // Enable CORS to allow requests from your frontend
+app.use(cors({
+  origin: 'http://localhost:3000', // Specify your frontend URL
+  credentials: true // Allow credentials (cookies, authorization headers, etc.)
+}));
+// Configure Session
+app.use(session({
+  secret: 'mySuperSecretKey12345!', //Temp Key for development
+  resave: false,
+  saveUninitialized: true,
+  cookie: {secure: false}
+}))
 
 
 // Connect to MongoDB
@@ -98,8 +109,12 @@ app.post('/login', async(req,res)=>
       // passwords don't match
       return res.status(401).json({check: false});
     }
-
-    // otherwise successful login
+    // create user session 
+    req.session.userId = user._id;
+    // save username for navbar
+    req.session.username = user.username;
+    // successful login
+    console.log(`User logged in: ${req.session.username}`);
     res.status(200).json({check: true});
   } catch(error)
   {
@@ -107,3 +122,20 @@ app.post('/login', async(req,res)=>
     res.status(500).json({message: 'server error' });
   }
 });
+
+app.post('/logout', (req,res) => {
+  req.session.destroy();
+  res.status(200).json({message: '|Server: Logged Out...'})
+});
+
+// Get username of currently logged in user
+app.get('/current-user', (req,res) => {
+  console.log(`Current user: ${req.session.userId}`)
+  // if(req.session.username)
+  // {
+  //   return res.json({username: req.session.username});
+  // }
+  
+  // return res.status(500).json({message: "No user logged in"});
+});
+

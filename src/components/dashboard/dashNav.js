@@ -1,4 +1,6 @@
-import {React, useState} from "react";
+import {React, useEffect, useState} from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 
 import {ReactComponent as User_Icon} from '../../imgs/icon-user.svg'
 import {ReactComponent as List_Icon} from '../../imgs/icon-list.svg'
@@ -9,12 +11,57 @@ import '../../styling/dashNav.css'
 
 function DashNav()
 {
+    const navigate = useNavigate();
     const [burgerToggle, setBurgerToggle] = useState(false);
+    const [currentUser, setCurrentUser] = useState('placeholder');
 
+    // Toggles the burger menu being displayed or not
     const handleBurgerClick = async() =>
     {
         setBurgerToggle(!burgerToggle);
     }
+
+    // Handles the log out post request
+    const handleLogOut = async() =>
+    {
+        navigate('/login');
+    }
+
+    // Gets the current logged in user
+    const getUsername = async() =>
+    {
+        try 
+        {
+            // get request to route /current-user
+            const response = await fetch('http://localhost:5000/current-user',
+                {
+                    method: 'GET',
+                    credentials: 'include',
+                }
+            );
+
+            // evaluate response
+            if(response.ok)
+            {
+                const data = await response.json();
+                setCurrentUser(data.username);
+            }
+            else
+            {
+                setCurrentUser("guest");
+            }
+
+        }
+        catch
+        {
+            console.error("Error fetching username");
+        }
+    }
+
+    // Apply when component mounts
+    useEffect( ()=> {
+        getUsername();
+    })
 
 
     return(
@@ -40,7 +87,7 @@ function DashNav()
 
                     {/* username */}
                     <div className="dashnav-profile-username">
-                        [username]
+                        {currentUser}
                     </div>
                     
                     {/* profile picture */}
@@ -53,12 +100,20 @@ function DashNav()
 
                 </div>
 
+                {/* Logout Button */}
+                <div>
+                    <button
+                    onClick={handleLogOut}>
+                        LOG OUT
+                    </button>
+                </div>
+
             </div>
 
             {burgerToggle ? (
                 <div className="dashnav-menu">
                     <div>
-                        ===Dashboard===
+                        <Link to="/dashboard">Dashboard</Link>
                     </div>
                     <div>
                         <Weight_Icon
@@ -73,7 +128,7 @@ function DashNav()
                             height = "20px"
                             width  = "20px"
                         />
-                        To Do List
+                        Daily Tasks
                     </div>
 
                     <div>

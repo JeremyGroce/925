@@ -15,14 +15,14 @@ function Dashboard()
 
 
             {/* All non-Dashnav screen space */}
-            <div className="dashboard-widget-outer-container">
+            {/* <div className="dashboard-widget-outer-container"> */}
                 
                 {/* Container for Widgets  */}
-                <div className="dashboard-widget-inner-container">
+                {/* <div className="dashboard-widget-inner-container"> */}
                         
-                </div>
+                {/* </div> */}
 
-            </div>
+            {/* </div> */}
 
 
 
