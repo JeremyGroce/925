@@ -24,38 +24,28 @@ function DashNav()
     // Handles the log out post request
     const handleLogOut = async() =>
     {
-        navigate('/login');
+        console.log("|Handing Logout");
+        const response = await fetch('http://localhost:5000/logout', {
+            method: 'POST',
+            credentials: 'include',
+        });
     }
 
     // Gets the current logged in user
     const getUsername = async() =>
     {
-        try 
-        {
-            // get request to route /current-user
-            const response = await fetch('http://localhost:5000/current-user',
-                {
-                    method: 'GET',
-                    credentials: 'include',
-                }
-            );
-
-            // evaluate response
-            if(response.ok)
+        console.log("CLICKED!");
+        const response = await fetch('http://localhost:5000/current-username', 
             {
-                const data = await response.json();
-                setCurrentUser(data.username);
+                method: 'GET',
+                credentials: 'include',
             }
-            else
-            {
-                setCurrentUser("guest");
-            }
+        );
 
-        }
-        catch
-        {
-            console.error("Error fetching username");
-        }
+        const data = await response.json();
+
+        setCurrentUser(data.currentUser);
+        console.log(data.currentUser);
     }
 
     // Apply when component mounts
@@ -88,6 +78,7 @@ function DashNav()
                     {/* username */}
                     <div className="dashnav-profile-username">
                         {currentUser}
+                        
                     </div>
                     
                     {/* profile picture */}

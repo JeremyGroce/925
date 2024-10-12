@@ -20,7 +20,7 @@ app.use(session({
   secret: 'mySuperSecretKey12345!', //Temp Key for development
   resave: false,
   saveUninitialized: true,
-  cookie: {secure: false}
+  cookie: { secure: false, maxAge: 1000 * 60 * 60 } // Optional: set a max age for the cookie
 }))
 
 
@@ -91,51 +91,49 @@ app.post('/register',async(req,res)=> {
  
 });
 
-app.post('/login', async(req,res)=>
-{
-  const {username, password} = req.body;
+app.post('/login', async (req, res) => {
+  const { username, password } = req.body;
   try {
     const user = await User.findOne({ username });
-    if(!user)
-    {
-      // username wrong
-      return res.status(401).json({check: false});
+    if (!user) {
+      console.log('User not found');
+      return res.status(401).json({ check: false });
     }
 
     const pass = await bcrypt.compare(password, user.password);
-    console.log(pass);
-    if(!pass)
-    {
-      // passwords don't match
-      return res.status(401).json({check: false});
+    console.log(`Password match: ${pass}`);
+    if (!pass) {
+      console.log('Password does not match');
+      return res.status(401).json({ check: false });
     }
-    // create user session 
+
     req.session.userId = user._id;
-    // save username for navbar
     req.session.username = user.username;
-    // successful login
-    console.log(`User logged in: ${req.session.username}`);
-    res.status(200).json({check: true});
-  } catch(error)
-  {
+
+    console.log("---login route---");
+    console.log("|",req.session.userId);
+    console.log("|",req.session.username);
+
+    res.status(200).json({ check: true });
+  } catch (error) {
     console.error(error);
-    res.status(500).json({message: 'server error' });
+    res.status(500).json({ message: 'server error' });
   }
 });
 
-app.post('/logout', (req,res) => {
+// log out user upon request
+// -> add try-catch block
+app.post('/logout', async (req,res) => {
+  console.log('---Logout Route---');
   req.session.destroy();
-  res.status(200).json({message: '|Server: Logged Out...'})
+  res.clearCookie('connect.sid');
 });
 
 // Get username of currently logged in user
-app.get('/current-user', (req,res) => {
-  console.log(`Current user: ${req.session.userId}`)
-  // if(req.session.username)
-  // {
-  //   return res.json({username: req.session.username});
-  // }
-  
-  // return res.status(500).json({message: "No user logged in"});
+// -> add check of username being present
+app.get('/current-username', async (req,res) =>
+{
+  res.status(200).json({ currentUser: req.session.username});
 });
+
 
