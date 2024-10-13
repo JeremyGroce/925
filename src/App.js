@@ -6,6 +6,7 @@ import About from './components/landing/About.js';
 import Dashboard from './pages/dashboard.js';
 import Contact from './components/landing/contact.js';
 import Register from './components/landing/register.js';
+import TaskTracker from './pages/taskTracker.js';
 
 
 function App() {
@@ -25,6 +26,11 @@ function App() {
         {/* Dashboard Page */}
         <Route path='/dashboard' element={<Dashboard/>}>
 
+        </Route>
+
+        {/* Task Tracker Page */}
+        <Route path='/task-tracker' element={<TaskTracker/>}>
+          
         </Route>
 
 

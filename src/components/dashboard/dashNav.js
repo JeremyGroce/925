@@ -24,7 +24,10 @@ function DashNav()
     // Handles the log out post request
     const handleLogOut = async() =>
     {
-        console.log("|Handing Logout");
+        // Redirect to the login page
+        navigate("/login");
+
+        // Log out the user 
         const response = await fetch('http://localhost:5000/logout', {
             method: 'POST',
             credentials: 'include',
@@ -34,7 +37,7 @@ function DashNav()
     // Gets the current logged in user
     const getUsername = async() =>
     {
-        console.log("CLICKED!");
+        // Get username of current session
         const response = await fetch('http://localhost:5000/current-username', 
             {
                 method: 'GET',
@@ -44,8 +47,8 @@ function DashNav()
 
         const data = await response.json();
 
+        // Set the user for display
         setCurrentUser(data.currentUser);
-        console.log(data.currentUser);
     }
 
     // Apply when component mounts
@@ -101,6 +104,7 @@ function DashNav()
 
             </div>
 
+            {/* Toggled Menu options */}
             {burgerToggle ? (
                 <div className="dashnav-menu">
                     <div>
@@ -119,7 +123,7 @@ function DashNav()
                             height = "20px"
                             width  = "20px"
                         />
-                        Daily Tasks
+                        <Link to="/task-tracker">Task Tracker</Link>
                     </div>
 
                     <div>
