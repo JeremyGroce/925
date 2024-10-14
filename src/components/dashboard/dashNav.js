@@ -6,6 +6,7 @@ import {ReactComponent as User_Icon} from '../../imgs/icon-user.svg'
 import {ReactComponent as List_Icon} from '../../imgs/icon-list.svg'
 import {ReactComponent as Watch_Icon} from '../../imgs/icon-watch.svg'
 import {ReactComponent as Weight_Icon} from '../../imgs/icon-weight.svg'
+import {ReactComponent as Logout_Icon} from '../../imgs/icon-logout.svg';
 
 import '../../styling/dashNav.css'
 
@@ -63,7 +64,7 @@ function DashNav()
 
                 {/* Hamburger Menu Icon */}
                 <div 
-                    className="dashnav-hamburger-menu-container"
+                    className={`dashnav-hamburger-menu-container ${burgerToggle ? 'open' : ''}`}
                     onClick={handleBurgerClick}
                 >
 
@@ -83,13 +84,10 @@ function DashNav()
                         {currentUser}
                         
                     </div>
-                    
-                    {/* profile picture */}
+
+                    {/* Profile Picture */}
                     <div className="dashnav-profile-pfp">
-                        <User_Icon
-                            height = "25px"
-                            width  = "25px"
-                        />
+                        
                     </div>
 
                 </div>
@@ -97,8 +95,12 @@ function DashNav()
                 {/* Logout Button */}
                 <div>
                     <button
-                    onClick={handleLogOut}>
-                        LOG OUT
+                        onClick={handleLogOut}
+>
+                        <Logout_Icon
+                            height = "35px"
+                            width  = "40px"
+                            />
                     </button>
                 </div>
 

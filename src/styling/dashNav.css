@@ -18,34 +18,39 @@
     display: flex;
     flex-direction: row;
 
-    border: 1px blue solid;
 
 
-    background-color: white;
     height: 30px;
     width: 130px;
 }
 
 .dashnav-profile-username
 {
+    color: white;
+    font-weight: bold;
     position: absolute;
     
 }
 
-.dashnav-profile-pfp
+/* .dashnav-profile-pfp
 {
+    height: 30px;
+    width: 30px;
     position: absolute;
-    right: 5px;
+    right: 40px;
     border-radius: 100%;
-}
+    border: 2px solid white;
+} */
 
+/* holds the burger icon */
 .dashnav-hamburger-menu-container
 {
     position: absolute;
-
-    left: 10px;
+    border-radius: 5px;
+    left: 3px;
     height: 30px;
-    width: 35px;
+    width: 30px;
+
 
     cursor: pointer;
 }
@@ -55,11 +60,27 @@
   width: 30px;
   height: 4px;
   border-radius: 10px;
-  background-color: black;
+  background-color: white;
   margin: 4px 0px ;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 
+/* On toggle, make burger-menu animate into X icon */
+.dashnav-hamburger-menu-container.open .bar1
+{
+    transform: rotate(45deg) translate(8px,6.5px)
+
+}
+
+.dashnav-hamburger-menu-container.open .bar2
+{
+    opacity: 0;
+}
+
+.dashnav-hamburger-menu-container.open .bar3
+{
+    transform: rotate(-45deg) translate(4px, -4px);
+}
 .dashnav-menu
 {
     position: absolute;
@@ -70,6 +91,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px;    
+    top: 33px;
+    border-end-end-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
 
 }
 
@@ -78,4 +103,12 @@
     background-color: gray;
     cursor: pointer;
     transition: 0.1s;
+}
+
+button
+{
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
