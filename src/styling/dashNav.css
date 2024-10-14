@@ -5,12 +5,11 @@
     justify-content: right;
     align-items: center;
 
+    position: absolute;
+
     height: 35px;
     width: 100vw;
-    background-color: white;
 
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); 
-    background-color: white;
 }
 
 

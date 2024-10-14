@@ -1,0 +1,52 @@
+.taskTracker-page
+{
+    height: 100vh;
+    width: 100vw;
+}
+
+.taskTracker-outer-container
+{
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.taskTracker-week-container
+{
+    height: 225px;
+    width: 100%;
+    background-color: rgb(128, 128, 250);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.taskTracker-week-day-container
+{
+    height: 125px;
+    width: 100px;
+    flex-shrink: 0;
+
+    background-color: lightblue;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: 0.2s;
+}
+
+.taskTracker-week-day-container:hover
+{
+    background-color: rgb(217, 236, 243);
+    height: 130px;
+    width: 105px;
+    transition: 0.2s;
+}
+
+.taskTracker-task-display
+{
+
+}
+
