@@ -91,3 +91,13 @@
     justify-content: center;
     gap: 40px;
 }
+
+/* ------------------------------------ */
+
+.taskTracker-list-outer-container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+}

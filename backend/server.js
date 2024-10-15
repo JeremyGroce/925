@@ -136,4 +136,27 @@ app.get('/current-username', async (req,res) =>
   res.status(200).json({ currentUser: req.session.username});
 });
 
+// get month, day of week, and day of month
+app.get('/current-date', async(req,res) =>
+{
+  console.log("| current-date");
+  const currentDate = new Date();
+
+  // get current month (ie. October)
+  const month = currentDate.getMonth();
+
+  // number between 0-6 to determine Sun-Sat
+  const dayOfWeek = currentDate.getDay();
+
+  // day of the month (ie. 14th, 17th)
+  const dayOfMonth = currentDate.getDate();
+
+  res.json({
+    month: month,
+    dayOfWeek: dayOfWeek,
+    dayOfMonth: dayOfMonth,
+  })
+});
+
+
 

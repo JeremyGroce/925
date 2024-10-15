@@ -84,6 +84,7 @@
 .dashnav-menu
 {
     position: absolute;
+    z-index: 9999;
     width: 200px;
     background-color: white;
     font-size: larger;
