@@ -1,0 +1,80 @@
+.taskManager-component
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.taskManager-outer-container
+{
+    height: 300px;
+    width: 250px;
+    display: flex;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.taskManager-outer-container h2 
+{
+    margin: 0;
+}
+
+.taskManager-linebreak
+{
+    height: 2px;
+    width: 240px;
+    background-color: lightgray;
+}
+
+/* selects between Daily/Weekly/Monthly Tasks */
+.taskManager-timeSelect
+{
+    height: 20px;
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.taskManager-timeSelect-circle
+{
+    height: 15px;
+    width: 15px;
+    
+
+    border-radius: 100%;
+    background-color: lightgray;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: .2s;
+}
+
+.taskManager-timeSelect-circle:hover,
+.taskManager-timeSelect-circle.select
+{
+    background-color: white;
+    transition: .2s;
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+.taskManager-newTask
+{
+
+
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}

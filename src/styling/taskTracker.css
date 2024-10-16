@@ -2,6 +2,7 @@
 {
     height: 100vh;
     width: 100vw;
+    background-color: lightblue;
 }
 
 .taskTracker-outer-container
@@ -13,6 +14,7 @@
     flex-direction: column;
 }
 
+/* Displays the current month */
 .taskTracker-month
 {
     display: flex;
@@ -25,7 +27,6 @@
 {
     height: 225px;
     width: 100%;
-    background-color: lightblue;
 
     display: flex;
     flex-direction: column;
@@ -34,7 +35,7 @@
 /* Individual modules displaying the day of the week */
 .taskTracker-week-day-module
 {
-    height: 125px;
+    height: 75px;
     width: 100px;
     flex-shrink: 0;
     border-radius: 10px;
@@ -55,9 +56,6 @@
 /* interior of the module which orients the text */
 .taskTracker-week-day-inner-container
 {
-    height: 100%;
-    width: 100%;
-
     display: flex;
     flex-direction: column;
 
@@ -65,11 +63,16 @@
     align-items: center;
 }
 
+.taskTracker-week-day-inner-container h2
+{
+    margin: 0;
+}
+
 .taskTracker-week-day-module:hover,
 .taskTracker-week-day-module.selected
 {
     background-color: rgb(217, 236, 243);
-    transform: scale(1.1);
+    transform: scale(1.2);
     transition: 0.1s;
     cursor: pointer;
     color: black;
@@ -100,4 +103,5 @@
     flex-direction: column;
     align-items: center;
     border: 1px solid black;
+    background-color: lightgray;
 }

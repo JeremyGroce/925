@@ -1,5 +1,7 @@
 import {React, useEffect, useState} from "react";
+
 import DashNav from "../components/dashboard/dashNav";
+import TaskManager from "../components/taskTracker/taskManager";
 
 import '../styling/taskTracker.css';
 
@@ -75,7 +77,7 @@ function TaskTracker()
                                 <div className="taskTracker-week-day-inner-container"
                                     onClick={() => handleSelect(days)}
                                 >
-                                    <h1>{dayOfMonth+index-1}</h1>
+                                    <h2>{dayOfMonth+index-1}</h2>
                                     <p>{days}</p>
                                     
                                 </div>
@@ -86,12 +88,7 @@ function TaskTracker()
                     </div>
 
                     {/* Daily-Weekly-Monthly Dask display */}
-                    <div className="taskTracker-list-outer-container">
-                        <h1>Daily Tasks</h1>
-                        <p>Clean Room</p>
-                        <p>Change Oil</p>
-                        <p>PM Facial Routine</p>
-                    </div>
+                        <TaskManager/>
 
                     
 
