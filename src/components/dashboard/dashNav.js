@@ -7,6 +7,7 @@ import {ReactComponent as List_Icon} from '../../imgs/icon-list.svg'
 import {ReactComponent as Watch_Icon} from '../../imgs/icon-watch.svg'
 import {ReactComponent as Weight_Icon} from '../../imgs/icon-weight.svg'
 import {ReactComponent as Logout_Icon} from '../../imgs/icon-logout.svg';
+import {ReactComponent as Home_Icon} from '../../imgs/icon-home.svg'
 
 import '../../styling/dashNav.css'
 
@@ -59,7 +60,8 @@ function DashNav()
 
 
     return(
-        <>
+        <div className="dashnav-component">
+
             <div className="dashnav-bar">
 
                 {/* Hamburger Menu Icon */}
@@ -109,39 +111,42 @@ function DashNav()
             {/* Toggled Menu options */}
             {burgerToggle ? (
                 <div className="dashnav-menu">
-                    <div>
-                        <Link to="/dashboard">Dashboard</Link>
-                    </div>
-                    <div>
-                        <Weight_Icon
-                            height = "20px"
-                            width  = "20px"
-                        />
-                        Fitness Tracker
+
+                    {/* Dashboard/Home */}
+                    <div className="dashnav-menu-innerContainer">
+                        <div className="dashnav-menu-option">
+                            <Link to="/dashboard">
+                                <Home_Icon
+                                    height = "50px"
+                                    width  = "50px"
+                                />
+                            </Link>
+                        </div>
+
+                        {/* Task-Tracker */}
+                        <div className="dashnav-menu-option">
+                            <Link to="/task-tracker">
+                                <List_Icon
+                                    height = "50px"
+                                    width  = "50px"
+                                />
+                            </Link>
+                        </div>
+
+                        {/* Time-Tracker */}
+                        <div className="dashnav-menu-option">
+                            <Watch_Icon
+                                height = "50px"
+                                width  = "50px"
+                            />
+                        </div>
                     </div>
 
-                    <div>
-                        <List_Icon
-                            height = "20px"
-                            width  = "20px"
-                        />
-                        <Link to="/task-tracker">Task Tracker</Link>
-                    </div>
-
-                    <div>
-                        <Watch_Icon
-                            height = "20px"
-                            width  = "20px"
-                        />
-                        Stop Watch Tracker
-                    </div>
                 </div>
-
-
             ):null}
 
            
-        </>
+        </div>
     );
 }
 

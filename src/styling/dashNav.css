@@ -85,25 +85,46 @@
 {
     position: absolute;
     z-index: 9999;
-    width: 200px;
+    width: 80px;
+    height: 100vh;
     background-color: white;
-    font-size: larger;
 
-    display: flex;
-    flex-direction: column;
     gap: 10px;    
-    top: 33px;
     border-end-end-radius: 15px;
     border-top-right-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .7);
-
 }
 
-.dashnav-menu>div:hover
+/* Holds the navigation menu options */
+.dashnav-menu-innerContainer
 {
-    background-color: gray;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.dashnav-menu-innerContainer>div
+{
+}
+
+.dashnav-menu-innerContainer>div:hover
+{
     cursor: pointer;
     transition: 0.1s;
+}
+
+.dashnav-menu-option
+{
+    display: flex;
+    justify-content: center; /* Center the content inside the option */
+    align-items: center;     /* Vertically center the content */
+    width: 100%; /* Remove the width: 100% */}
+
+.dashnav-menu-option:hover
+{
+    background-color: lightgray;
 }
 
 button

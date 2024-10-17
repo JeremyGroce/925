@@ -81,7 +81,7 @@ function TaskManager()
             </div>
 
             {/* Button Container for add, calendar, and stats */}
-            <div className="taskManager-buttons-container">
+            {/* <div className="taskManager-buttons-container">
                 <div className="taskManager-button">
 
                 </div>
@@ -93,7 +93,7 @@ function TaskManager()
                 <div className="taskManager-button">
 
                 </div>
-            </div>
+            </div> */}
 
             {/* Display for Add Menu, Calendar, and Statistics */}
             <div className="taskManager-generalDisplay">
