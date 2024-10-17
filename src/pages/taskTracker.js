@@ -58,6 +58,7 @@ function TaskTracker()
     return(
         <>
             <DashNav/>
+
             <div className="taskTracker-page">
 
                 <div className="taskTracker-outer-container">
@@ -87,13 +88,20 @@ function TaskTracker()
 
                     </div>
 
-                    {/* Daily-Weekly-Monthly Dask display */}
-                        <TaskManager/>
 
                     
 
                     </div>
+
+                    {/* Daily-Weekly-Monthly Dask display */}
+                    <div className="taskTracker-list-outer-container">
+                    <TaskManager/>
+
+                    </div>
+
                 </div>
+
+
 
         </>
     );

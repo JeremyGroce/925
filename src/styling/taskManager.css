@@ -1,17 +1,16 @@
 .taskManager-component
 {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    gap: 10px;
+    flex-direction: row;
+    width: 940px;
+    gap: 30px;
 }
 
+/* Exterior Module for all task data */
 .taskManager-outer-container
 {
-    height: 300px;
-    width: 250px;
+    height: 350px;
+    width: 350px;
     display: flex;
 
     display: flex;
@@ -32,7 +31,7 @@
 .taskManager-linebreak
 {
     height: 2px;
-    width: 240px;
+    width: 300px;
     background-color: lightgray;
 }
 
@@ -68,13 +67,50 @@
     cursor: pointer;
 }
 
-.taskManager-newTask
+.taskManager-buttons-container
 {
-
-
-    height: 50px;
-    width: 50px;
-    background-color: white;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 350px;
+}
+.taskManager-button
+{
+    height: 100px;
+    width: 100px;
+    background-color: lightgray;
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: .2s;
+
+}
+
+.taskManager-button:hover
+{
+    transform: scale(1.1);
+    transition: .2s;
+    cursor: pointer;
+    background-color: white;
+}
+
+/* selector + daily task display */
+.taskManager-List
+{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskManager-generalDisplay
+{
+    height: 350px;
+    width: 500px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 30px;
 }

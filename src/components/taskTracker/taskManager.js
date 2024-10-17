@@ -45,39 +45,63 @@ function TaskManager()
     return (
         <div className="taskManager-component">
 
-            {/* Selects between daily, weekly, and monthly tasks  */}
-            <div className="taskManager-timeSelect"> 
-                <div className={`taskManager-timeSelect-circle ${selected1 ? 'select' : ''}`}
-                    onClick={() => handleHeader(0)}
-                >
-                </div>
-                <div className={`taskManager-timeSelect-circle ${selected2 ? 'select' : ''}`}
-                    onClick={() => handleHeader(1)}
-                >
+            {/* Task Displays & Time Select */}
+            <div className="taskManager-List">
+                {/* Selects between daily, weekly, and monthly tasks  */}
+                <div className="taskManager-timeSelect"> 
+                    <div className={`taskManager-timeSelect-circle ${selected1 ? 'select' : ''}`}
+                        onClick={() => handleHeader(0)}
+                    >
+                    </div>
+                    <div className={`taskManager-timeSelect-circle ${selected2 ? 'select' : ''}`}
+                        onClick={() => handleHeader(1)}
+                    >
 
+                    </div>
+                    <div className={`taskManager-timeSelect-circle ${selected3 ? 'select' : ''}`}
+                        onClick={() => handleHeader(2)}
+                    >
+                    </div>
                 </div>
-                <div className={`taskManager-timeSelect-circle ${selected3 ? 'select' : ''}`}
-                    onClick={() => handleHeader(2)}
-                >
-                </div>
+
+                {/* Button to create a new task */}
+                {/* <div className="taskManager-newTask">
+                </div> */}
+
+
+                {/* Exterior Module Container */}
+                <div className="taskManager-outer-container">
+                    <h2>{header} Tasks</h2>
+                    <div className="taskManager-linebreak"></div>
+
             </div>
-
-            {/* Button to create a new task */}
-            {/* <div className="taskManager-newTask">
-            </div> */}
-
-
-            {/* Exterior Module Container */}
-            <div className="taskManager-outer-container">
-                <h2>{header} Tasks</h2>
-                <div className="taskManager-linebreak"></div>
-
             {/* Interior Module Container */}
 
 
             </div>
-        </div>
 
+            {/* Button Container for add, calendar, and stats */}
+            <div className="taskManager-buttons-container">
+                <div className="taskManager-button">
+
+                </div>
+
+                <div className="taskManager-button">
+
+                </div>
+
+                <div className="taskManager-button">
+
+                </div>
+            </div>
+
+            {/* Display for Add Menu, Calendar, and Statistics */}
+            <div className="taskManager-generalDisplay">
+
+            </div>
+
+
+        </div>
     );
 }
 
