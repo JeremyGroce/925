@@ -1,6 +1,9 @@
 import {React, useState} from "react";
 
 import '../../styling/taskManager.css'
+import {ReactComponent as Stats_Icon} from '../../imgs/icon-stats.svg';
+import {ReactComponent as Add_Icon} from '../../imgs/icon-add.svg';
+import {ReactComponent as Calendar_Icon} from '../../imgs/icon-calendar.svg';
 
 function TaskManager()
 {
@@ -80,26 +83,42 @@ function TaskManager()
 
             </div>
 
-            {/* Button Container for add, calendar, and stats */}
-            {/* <div className="taskManager-buttons-container">
-                <div className="taskManager-button">
+            {/* Display Container for Add Menu, Calendar, Statistics, and relevant buttons */}
+            <div className="taskmanager-generalDisplay-outerContainer">
+
+                {/* Display */}
+                <div className="taskManager-generalDisplay">
 
                 </div>
 
-                <div className="taskManager-button">
+                {/* Buttons */}
+                <div className="taskManager-buttons-container">
+
+                    <div className="taskManager-button" id="add">
+                        <Add_Icon
+                            height = "70px"
+                            width  = "70px"
+                        />
+
+                    </div>
+
+                    <div className="taskManager-button" id="calendar">
+                        <Calendar_Icon
+                            height = "45px"
+                            width  = "45px"
+                        />
+                    </div>
+
+                    <div className="taskManager-button" id="stats">
+                        <Stats_Icon
+                            height = "45px"
+                            width  = "45px"
+                        />
+                    </div>
 
                 </div>
-
-                <div className="taskManager-button">
-
-                </div>
-            </div> */}
-
-            {/* Display for Add Menu, Calendar, and Statistics */}
-            <div className="taskManager-generalDisplay">
 
             </div>
-
 
         </div>
     );

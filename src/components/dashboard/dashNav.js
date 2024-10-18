@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 import {ReactComponent as User_Icon} from '../../imgs/icon-user.svg'
-import {ReactComponent as List_Icon} from '../../imgs/icon-list.svg'
+import {ReactComponent as List_Icon} from '../../imgs/icon-checkbox.svg'
 import {ReactComponent as Watch_Icon} from '../../imgs/icon-watch.svg'
 import {ReactComponent as Weight_Icon} from '../../imgs/icon-weight.svg'
 import {ReactComponent as Logout_Icon} from '../../imgs/icon-logout.svg';
@@ -14,14 +14,10 @@ import '../../styling/dashNav.css'
 function DashNav()
 {
     const navigate = useNavigate();
-    const [burgerToggle, setBurgerToggle] = useState(false);
+    const [menuToggle, setMenuToggle] = useState(true);
     const [currentUser, setCurrentUser] = useState('placeholder');
 
-    // Toggles the burger menu being displayed or not
-    const handleBurgerClick = async() =>
-    {
-        setBurgerToggle(!burgerToggle);
-    }
+
 
     // Handles the log out post request
     const handleLogOut = async() =>
@@ -58,28 +54,13 @@ function DashNav()
         getUsername();
     })
 
-
     return(
         <div className="dashnav-component">
 
+            {/* Holds the profile username, pfp, and options in the top right */}
             <div className="dashnav-bar">
-
-                {/* Hamburger Menu Icon */}
-                <div 
-                    className={`dashnav-hamburger-menu-container ${burgerToggle ? 'open' : ''}`}
-                    onClick={handleBurgerClick}
-                >
-
-                    <div className="bar1">
-                    </div>
-                    <div className="bar2">
-                    </div>
-                    <div className="bar3">
-                    </div>
-                </div>
-
                 {/* profile container */}
-                <div className="dashnav-profile">
+                <div className="dashnav-profileContainer">
 
                     {/* username */}
                     <div className="dashnav-profile-username">
@@ -87,29 +68,11 @@ function DashNav()
                         
                     </div>
 
-                    {/* Profile Picture */}
-                    <div className="dashnav-profile-pfp">
-                        
-                    </div>
-
                 </div>
-
-                {/* Logout Button */}
-                <div>
-                    <button
-                        onClick={handleLogOut}
->
-                        <Logout_Icon
-                            height = "35px"
-                            width  = "40px"
-                            />
-                    </button>
-                </div>
-
             </div>
 
             {/* Toggled Menu options */}
-            {burgerToggle ? (
+            {menuToggle ? (
                 <div className="dashnav-menu">
 
                     {/* Dashboard/Home */}
@@ -140,6 +103,20 @@ function DashNav()
                                 width  = "50px"
                             />
                         </div>
+
+                        {/* Logout Button */}
+                        <div className="dashNav-menu-option" id="dashnav-menu-option-logout">
+                            <button
+                                onClick={handleLogOut}
+        >
+                                <Logout_Icon
+                                    height = "50px"
+                                    width  = "50px"
+                                    />
+                            </button>
+                        </div>
+
+
                     </div>
 
                 </div>

@@ -3,10 +3,31 @@
     display: flex;
     flex-direction: row;
     width: 940px;
-    gap: 40px;
+    transition: 0.2s;
+    justify-content: space-between;
+    /* gap: 40px; */
 }
 
-/* Exterior Module for all task data */
+/* If the window gets too narrow, responsive design */
+@media (max-width: 768px)
+{
+    /* reorient components vertically */
+    .taskManager-component
+    {
+        flex-direction: column;
+        align-items: center;
+        width: 80vw;
+        transition: 0.2s;;
+    }
+
+
+    .taskManager-buttons-container
+    {
+        margin-bottom: 30px;
+    }
+}
+
+/* Display Module for all task data */
 .taskManager-outer-container
 {
     height: 350px;
@@ -39,17 +60,18 @@
 .taskManager-timeSelect
 {
     height: 20px;
-    width: 150px;
+    width: 100px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    /* gap: 20px; */
 }
 
+/* Circle Icon which user clicks */
 .taskManager-timeSelect-circle
 {
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
     
 
     border-radius: 100%;
@@ -67,24 +89,32 @@
     cursor: pointer;
 }
 
+/* Contains the circle icons */
 .taskManager-buttons-container
 {
-    margin-top: 30px;
+    
     display: flex;
-    flex-direction: column;
-    gap: 30px;
-    height: 350px;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
+/* Button which changes what is being displayed */
 .taskManager-button
 {
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 170px;
     background-color: lightgray;
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     transition: .2s;
 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
 
 .taskManager-button:hover
 {
@@ -106,12 +136,42 @@
     align-items: center;
 }
 
+
+.taskmanager-generalDisplay-outerContainer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .taskManager-generalDisplay
 {
-    height: 250px;
+    height: 280px;
     width: 520px;
     background-color: white;
     border-radius: 5px;
     margin-top: 30px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* set default color to add icon */
+#add
+{
+    fill: white;
+}
+
+.taskManager-button:hover #add
+{
+    fill: gray;
+    transition: .3s;
+
+}
+
+.calendar-base {
+    transition: fill 0.3s; 
+}
+
+.taskManager-button:hover .calendar-base 
+{
+    fill: #F44336; 
 }

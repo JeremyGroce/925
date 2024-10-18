@@ -9,78 +9,34 @@
 
     height: 35px;
     width: 100vw;
-
 }
 
 
-.dashnav-profile
+.dashnav-profileContainer
 {
     display: flex;
     flex-direction: row;
 
-
-
+    background-color: white;
     height: 30px;
-    width: 130px;
+    width: 160px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .7);
+
 }
 
+/* Username styling */
 .dashnav-profile-username
 {
-    color: white;
+    color: black;
+    font-size: larger;
     font-weight: bold;
     position: absolute;
+    right: 20px;
     
 }
 
-/* .dashnav-profile-pfp
-{
-    height: 30px;
-    width: 30px;
-    position: absolute;
-    right: 40px;
-    border-radius: 100%;
-    border: 2px solid white;
-} */
-
-/* holds the burger icon */
-.dashnav-hamburger-menu-container
-{
-    position: absolute;
-    border-radius: 5px;
-    left: 3px;
-    height: 30px;
-    width: 30px;
-
-
-    cursor: pointer;
-}
-
-.bar1, .bar2, .bar3
-{
-  width: 30px;
-  height: 4px;
-  border-radius: 10px;
-  background-color: white;
-  margin: 4px 0px ;
-  transition: 0.2s;
-}
-
-/* On toggle, make burger-menu animate into X icon */
-.dashnav-hamburger-menu-container.open .bar1
-{
-    transform: rotate(45deg) translate(8px,6.5px)
-
-}
-
-.dashnav-hamburger-menu-container.open .bar2
-{
-    opacity: 0;
-}
-
-.dashnav-hamburger-menu-container.open .bar3
-{
-    transform: rotate(-45deg) translate(4px, -4px);
-}
+/* Menu Container component */
 .dashnav-menu
 {
     position: absolute;
@@ -105,28 +61,32 @@
     gap: 20px;
 }
 
-.dashnav-menu-innerContainer>div
-{
-}
-
-.dashnav-menu-innerContainer>div:hover
-{
-    cursor: pointer;
-    transition: 0.1s;
-}
-
+/* Contains individual Menu Options (Dash, List, Timer) */
 .dashnav-menu-option
 {
     display: flex;
     justify-content: center; /* Center the content inside the option */
     align-items: center;     /* Vertically center the content */
-    width: 100%; /* Remove the width: 100% */}
-
-.dashnav-menu-option:hover
-{
-    background-color: lightgray;
 }
 
+.dashnav-menu-option svg
+{
+    fill: gray;
+}
+
+.dashnav-menu-option svg:hover
+{
+    fill: #ff9345;
+}
+
+
+/* Places Logout icon at bottom */
+#dashnav-menu-option-logout
+{
+    margin-top: 300px;
+}
+
+/* De-render all the default components of the button */
 button
 {
     padding: 0;
@@ -134,3 +94,4 @@ button
     border: none;
     cursor: pointer;
 }
+
