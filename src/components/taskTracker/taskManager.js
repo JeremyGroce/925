@@ -89,6 +89,74 @@ function TaskManager()
                 {/* Display */}
                 <div className="taskManager-generalDisplay">
 
+                    {/* Display -> Add New Task */}
+                    <form>
+                        <div className="taskManager-generalDisplay-addTask">
+                            
+                            {/*Task Name*/}
+                            <label>
+                                Task Name
+                                <br/>
+                                <input 
+                                    type="text" 
+                                    name="task"
+                                    placeholder="Run, Code, Read..."/>
+                            </label>
+
+                            {/* Category */}
+                            <label>
+                                Category
+                                <br/>
+                                <select>
+                                    <option>Fitness</option>
+                                    <option>School</option>
+                                    <option>Work</option>
+                                    <option>Facial Routine</option>
+                                </select>
+                                <button>[+]</button>
+                            </label>
+
+                            {/* Icon */}
+                            <label>
+                                Icon 
+                                <button>Click</button>    
+                                                          
+                            </label>
+
+
+                            {/* Reoccuring || Event */}
+                            <label>
+                                <p
+                                    id="addTask-reoccuring"
+                                    style={{display: 'inline'}}
+                                >Reoccuring</p>
+                                <> | </>
+                                <p
+                                    id="addTask-event"
+                                    style={{display: 'inline'}}
+                                >
+                                    Event
+                                </p>
+                                <div className="addTask-timescale" >
+                                    component...
+                                </div>
+                            </label>
+
+                            {/* Submit New Task Button */}
+                            <button
+                                className="addTask-submitBtn"
+                            >
+                                Submit
+                            </button>
+                            
+                        </div> 
+                   </form>
+
+
+
+                    {/* Display -> View Calendar */}
+
+                    {/* Display -> See Stats */}
                 </div>
 
                 {/* Buttons */}

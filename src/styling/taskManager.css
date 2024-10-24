@@ -175,3 +175,65 @@
 {
     fill: #F44336; 
 }
+
+/* Contains all the components to add a new task */
+.taskManager-generalDisplay-addTask
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.taskManager-generalDisplay-addTask h5 
+{
+    margin: 0px;
+}
+
+/* Contains reoccuring and Event */
+.taskManager-generalDisplay-addTask-row
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    transition: .2s;
+}
+
+#addTask-reoccuring:hover, #addTask-event:hover
+{
+    background-color: lightgray;
+    border-radius: 5px;
+    transition: .2s;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.experiment
+{
+    width: 95%;
+    height: 40px;
+    border: 1px solid lightgray;
+}
+
+.addTask-timescale
+{
+    width: 95%;
+    height: 40px;
+    border: 1px solid lightgray;
+}
+
+.addTask-submitBtn
+{
+    height: 30px;
+    width: 80px;
+    background-color: rgb(238, 189, 98);
+    border-radius: 5px;
+}
