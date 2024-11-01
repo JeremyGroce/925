@@ -1,0 +1,22 @@
+.addCategory-component
+{
+    position: absolute;
+    margin-left: 125px;
+    margin-top: -20px;
+    height: 100px;
+    width: 200px;
+    background-color: lightgray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.addCategory-submitBtn
+{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #eebd62;
+    width: 60px;
+}

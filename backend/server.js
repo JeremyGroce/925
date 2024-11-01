@@ -158,5 +158,33 @@ app.get('/current-date', async(req,res) =>
   })
 });
 
+// ----Create Category, Get Category, create task ----
+const taskSchema = new mongoose.Schema(
+  {
+    taskName: {type: String, required: true},
+    categoryID: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true },
+    userID: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
+  }
+);
 
+// Create category
+app.post('/create-category', async(req,res) =>
+{
+  // Get request body
+  const {name} = req.body;
+  console.log("|Category: ", name);
+});
 
+// get existing category list
+app.get('/current-categories', async(req,res) =>
+{
+
+});
+
+// submit the task name, category, and general data
+app.post('/create-task', async(req,res) =>
+{
+
+});
+
+// 

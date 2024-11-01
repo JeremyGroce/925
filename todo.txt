@@ -1,0 +1,13 @@
+make this search engine optimized (SEO)
+
+Restrict beyond the login screen from being accessed
+
+make a 404 page
+
+API rate limiting
+
+Error handling
+
+Data sanitaztion (trimming entries from white space, checking validity)
+
+Cache for username, userprofile data, etc.

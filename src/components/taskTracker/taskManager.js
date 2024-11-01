@@ -1,9 +1,13 @@
 import {React, useState} from "react";
 
+import AddCategoryMenu from '../../components/taskTracker/addCategory.js';
+
 import '../../styling/taskManager.css'
 import {ReactComponent as Stats_Icon} from '../../imgs/icon-stats.svg';
 import {ReactComponent as Add_Icon} from '../../imgs/icon-add.svg';
 import {ReactComponent as Calendar_Icon} from '../../imgs/icon-calendar.svg';
+
+
 
 function TaskManager()
 {
@@ -16,6 +20,12 @@ function TaskManager()
     const [selected2, handleSelected2] = useState(false);
     const [selected3, handleSelected3] = useState(false);
 
+    // Create new Task data
+    const [taskName, setTaskname] = useState('');
+    const [category, setCategory] = useState('');
+
+    // Toggle for Add New Category
+    const [toggleCategory, setToggleCategory] = useState(false);
 
 
     // displays Daily/Weekly/Monthly and selects the cooresponding bubble
@@ -90,7 +100,6 @@ function TaskManager()
                 <div className="taskManager-generalDisplay">
 
                     {/* Display -> Add New Task */}
-                    <form>
                         <div className="taskManager-generalDisplay-addTask">
                             
                             {/*Task Name*/}
@@ -100,27 +109,35 @@ function TaskManager()
                                 <input 
                                     type="text" 
                                     name="task"
-                                    placeholder="Run, Code, Read..."/>
+                                    placeholder="Run, Code, Read..."
+                                    value={taskName}
+                                    onChange={(e) => setTaskname(e.target.value)}
+
+                                />  
                             </label>
 
                             {/* Category */}
                             <label>
                                 Category
                                 <br/>
-                                <select>
+                                <select
+                                    value={category}
+                                    onChange={(e)=>setCategory(e.target.value)}
+                                >
+                                    
                                     <option>Fitness</option>
                                     <option>School</option>
                                     <option>Work</option>
                                     <option>Facial Routine</option>
                                 </select>
-                                <button>[+]</button>
-                            </label>
 
-                            {/* Icon */}
-                            <label>
-                                Icon 
-                                <button>Click</button>    
-                                                          
+                                {/* create new category */}
+                                <button
+                                    onClick={()=>setToggleCategory(!toggleCategory)}
+                                >[+]</button>
+
+                                {/* Toggle for adding a brand new category */}
+                                {toggleCategory && <AddCategoryMenu/>}
                             </label>
 
 
@@ -150,8 +167,6 @@ function TaskManager()
                             </button>
                             
                         </div> 
-                   </form>
-
 
 
                     {/* Display -> View Calendar */}
