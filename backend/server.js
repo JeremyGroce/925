@@ -167,12 +167,32 @@ const taskSchema = new mongoose.Schema(
   }
 );
 
+const categorySchema = new mongoose.Schema(
+  {
+    categoryName: {type: String, required: true},
+    userID: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true}
+  }
+);
+
+const Category = mongoose.model('Category', categorySchema);
+
 // Create category
 app.post('/create-category', async(req,res) =>
 {
   // Get request body
   const {name} = req.body;
-  console.log("|Category: ", name);
+  const userID = req.session.userId;
+
+  try 
+  {
+    const savedCategory = await Category.create({name, userID});
+    res.status(200).json({message: "|New category created"})
+  }
+  catch(error)
+  {
+    res.status(500).json({message: "|Error creating category"});
+  }
+
 });
 
 // get existing category list
