@@ -20,7 +20,8 @@ function AddCategory()
                     {
                         'Content-Type': 'application/json',
                     },
-                        body: JSON.stringify({name: categoryName}),
+                    credentials: 'include',
+                    body: JSON.stringify({name: categoryName}),
                 }
             );
         }

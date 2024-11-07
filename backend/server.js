@@ -179,19 +179,25 @@ const Category = mongoose.model('Category', categorySchema);
 // Create category
 app.post('/create-category', async(req,res) =>
 {
-  // Get request body
-  const {name} = req.body;
-  const userID = req.session.userId;
+  const categoryName = req.body.name;
+  const currUser = req.session.userId;
 
-  try 
-  {
-    const savedCategory = await Category.create({name, userID});
-    res.status(200).json({message: "|New category created"})
-  }
-  catch(error)
-  {
-    res.status(500).json({message: "|Error creating category"});
-  }
+  // prevent lack of user validation and prevent empty category
+  if (!categoryName) return res.status(401).json({message: "Error - empty"});
+  if (!currUser) return res.status(400).json({message: "Unauthorized - no user"});
+
+
+  // uncomment after you get the frontend accessible only by authorized users 
+
+  // try 
+  // {
+  //   const savedCategory = await Category.create({categoryName, userID});
+  //   res.status(200).json({message: "|New category created"})
+  // }
+  // catch(error)
+  // {
+  //   res.status(500).json({message: "|Error creating category"});
+  // }
 
 });
 
