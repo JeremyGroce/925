@@ -8,7 +8,7 @@ import Dashboard from './pages/dashboard.js';
 import Contact from './components/landing/contact.js';
 import Register from './components/landing/register.js';
 import TaskTracker from './pages/taskTracker.js';
-
+import ProtectedRoute from './components/landing/protectedRoute.js';
 
 function App() {
   
@@ -26,12 +26,18 @@ function App() {
           </Route>
         
           {/* Dashboard Page */}
-          <Route path='/dashboard' element={<Dashboard/>}>
+          <Route path='/dashboard' element={
+            <ProtectedRoute>
+            <Dashboard/>
+            </ProtectedRoute>}>
 
           </Route>
 
           {/* Task Tracker Page */}
-          <Route path='/task-tracker' element={<TaskTracker/>}>
+          <Route path='/task-tracker' element={
+            <ProtectedRoute>
+            <TaskTracker/>
+            </ProtectedRoute>}>
             
           </Route>
 

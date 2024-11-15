@@ -1,4 +1,4 @@
-import {React, useEffect, useState} from "react";
+import {React, useContext, useEffect, useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 
@@ -9,6 +9,8 @@ import {ReactComponent as Weight_Icon} from '../../imgs/icon-weight.svg'
 import {ReactComponent as Logout_Icon} from '../../imgs/icon-logout.svg';
 import {ReactComponent as Home_Icon} from '../../imgs/icon-home.svg'
 
+import { AuthContext } from "../landing/AuthContext";
+
 import '../../styling/dashNav.css'
 
 function DashNav()
@@ -17,11 +19,14 @@ function DashNav()
     const [menuToggle, setMenuToggle] = useState(true);
     const [currentUser, setCurrentUser] = useState('placeholder');
 
+    const {logout} = useContext(AuthContext);
 
 
     // Handles the log out post request
     const handleLogOut = async() =>
     {
+        logout();
+
         // Redirect to the login page
         navigate("/login");
 

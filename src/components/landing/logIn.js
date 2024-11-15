@@ -1,23 +1,26 @@
-import {React, useState} from "react";
+import {React, useContext, useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 
 import {ReactComponent as Icon_Lock} from '../../imgs/icon-lock.svg';
 import {ReactComponent as Icon_User} from '../../imgs/icon-user.svg';
 
+import { AuthContext } from "./AuthContext";
+
 import '../../styling/login.css';
 
 function Login()
 {
+    const {login, logout} = useContext(AuthContext);
+
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-
     const navigate = useNavigate();
 
     const handleLogin = async() =>     
     {
         // e.preventDefault();
-
         try {
             const response = await fetch('http://localhost:5000/login',
                 {
@@ -37,6 +40,7 @@ function Login()
                 {
                     if(data.check)
                     {
+                        login();
                         console.log("successful login");
                         navigate("/dashboard");
                     }
@@ -54,11 +58,7 @@ function Login()
             console.log("catch");
         }
 
-        // post request
-        // change .css elements to respond
 
-        console.log(username);
-        console.log(password);
     }
 
     return(
