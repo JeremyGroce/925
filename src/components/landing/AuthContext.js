@@ -8,8 +8,8 @@ export const AuthProvider = ({children}) =>
 {
     const [isAuth, setIsAuth] = useState(false);
 
-    const login = () => setIsAuth(!isAuth);
-    const logout = ()=> setIsAuth(!isAuth);
+    const login = () => setIsAuth(true);
+    const logout = ()=> setIsAuth(false);
 
     return (
         <AuthContext.Provider value={{isAuth, login, logout}}>
